@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F46800"/>
+      <stop offset="100%" style="stop-color:#FF9800"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="200" rx="12" fill="url(#bg)"/>
+  <rect x="0" y="190" width="900" height="10" rx="0" fill="url(#accent)"/>
+  <!-- CO2 wave decoration -->
+  <path d="M0,140 Q50,120 100,140 T200,140 T300,140 T400,140 T500,140 T600,140 T700,140 T800,140 T900,140" stroke="#F4680033" stroke-width="2" fill="none"/>
+  <path d="M0,150 Q50,130 100,150 T200,150 T300,150 T400,150 T500,150 T600,150 T700,150 T800,150 T900,150" stroke="#F4680022" stroke-width="2" fill="none"/>
+  <!-- Leaf/air icon -->
+  <g transform="translate(60, 55)">
+    <circle cx="40" cy="40" r="38" fill="none" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    <path d="M40,15 C55,15 70,25 70,45 C70,65 55,75 40,75 C25,75 10,65 10,45 C10,25 25,15 40,15 Z" fill="#4CAF5033"/>
+    <text x="40" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#4CAF50">CO&#x2082;</text>
+  </g>
+  <!-- Fan icon -->
+  <g transform="translate(760, 55)">
+    <circle cx="40" cy="40" r="38" fill="none" stroke="#2196F3" stroke-width="2" opacity="0.6"/>
+    <circle cx="40" cy="40" r="6" fill="#2196F3" opacity="0.8"/>
+    <path d="M40,34 C40,20 50,14 58,18 C66,22 60,32 52,36 Z" fill="#2196F366"/>
+    <path d="M46,40 C60,40 66,50 62,58 C58,66 48,60 44,52 Z" fill="#2196F366"/>
+    <path d="M40,46 C40,60 30,66 22,62 C14,58 20,48 28,44 Z" fill="#2196F366"/>
+    <path d="M34,40 C20,40 14,30 18,22 C22,14 32,20 36,28 Z" fill="#2196F366"/>
+  </g>
+  <!-- Title -->
+  <text x="450" y="75" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="bold" fill="white">AirGradient Dashboard</text>
+  <text x="450" y="110" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#aaaacc">Indoor Air Quality Monitoring for Grafana</text>
+  <!-- Metric pills -->
+  <g transform="translate(195, 130)">
+    <rect x="0" y="0" width="60" height="24" rx="12" fill="#4CAF5033" stroke="#4CAF50" stroke-width="1"/>
+    <text x="30" y="16" text-anchor="middle" font-family="Arial" font-size="11" fill="#4CAF50">CO&#x2082;</text>
+  </g>
+  <g transform="translate(270, 130)">
+    <rect x="0" y="0" width="60" height="24" rx="12" fill="#FF980033" stroke="#FF9800" stroke-width="1"/>
+    <text x="30" y="16" text-anchor="middle" font-family="Arial" font-size="11" fill="#FF9800">PM2.5</text>
+  </g>
+  <g transform="translate(345, 130)">
+    <rect x="0" y="0" width="60" height="24" rx="12" fill="#9C27B033" stroke="#9C27B0" stroke-width="1"/>
+    <text x="30" y="16" text-anchor="middle" font-family="Arial" font-size="11" fill="#9C27B0">VOC</text>
+  </g>
+  <g transform="translate(420, 130)">
+    <rect x="0" y="0" width="60" height="24" rx="12" fill="#F4430033" stroke="#F44300" stroke-width="1"/>
+    <text x="30" y="16" text-anchor="middle" font-family="Arial" font-size="11" fill="#F44300">NOx</text>
+  </g>
+  <g transform="translate(495, 130)">
+    <rect x="0" y="0" width="60" height="24" rx="12" fill="#2196F333" stroke="#2196F3" stroke-width="1"/>
+    <text x="30" y="16" text-anchor="middle" font-family="Arial" font-size="11" fill="#2196F3">Temp</text>
+  </g>
+  <g transform="translate(570, 130)">
+    <rect x="0" y="0" width="70" height="24" rx="12" fill="#00BCD433" stroke="#00BCD4" stroke-width="1"/>
+    <text x="35" y="16" text-anchor="middle" font-family="Arial" font-size="11" fill="#00BCD4">Humidity</text>
+  </g>
+</svg>

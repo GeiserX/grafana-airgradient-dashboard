@@ -1,0 +1,280 @@
+{
+  "dashboard": {
+    "uid": "airgradient-bano",
+    "title": "Air Quality - Baño",
+    "tags": ["airgradient", "air-quality", "bano"],
+    "timezone": "browser",
+    "refresh": "30s",
+    "time": {"from": "now-24h", "to": "now"},
+    "panels": [
+      {
+        "id": 1, "type": "gauge", "title": "CO₂",
+        "gridPos": {"h": 8, "w": 4, "x": 0, "y": 0},
+        "fieldConfig": {
+          "defaults": {
+            "unit": "ppm", "min": 0, "max": 3000,
+            "thresholds": {"mode": "absolute", "steps": [
+              {"color": "green", "value": null},
+              {"color": "#5794F2", "value": 600},
+              {"color": "yellow", "value": 800},
+              {"color": "orange", "value": 1000},
+              {"color": "red", "value": 1500},
+              {"color": "dark-red", "value": 2000}
+            ]},
+            "color": {"mode": "thresholds"}
+          }
+        },
+        "targets": [{"expr": "hass_sensor_carbon_dioxide_ppm{entity=\"sensor.i_9psl_carbon_dioxide\"}", "legendFormat": "CO₂", "refId": "A"}],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 2, "type": "gauge", "title": "PM2.5",
+        "gridPos": {"h": 8, "w": 4, "x": 4, "y": 0},
+        "fieldConfig": {
+          "defaults": {
+            "unit": "µg/m³", "min": 0, "max": 150,
+            "thresholds": {"mode": "absolute", "steps": [
+              {"color": "green", "value": null},
+              {"color": "#96D98D", "value": 5},
+              {"color": "yellow", "value": 12},
+              {"color": "orange", "value": 35},
+              {"color": "red", "value": 55},
+              {"color": "purple", "value": 125}
+            ]},
+            "color": {"mode": "thresholds"}
+          }
+        },
+        "targets": [{"expr": "hass_sensor_pm25_u0xb5g_per_mu0xb3{entity=\"sensor.i_9psl_pm2_5\"}", "legendFormat": "PM2.5", "refId": "A"}],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 3, "type": "gauge", "title": "VOC Index",
+        "gridPos": {"h": 8, "w": 4, "x": 8, "y": 0},
+        "fieldConfig": {
+          "defaults": {
+            "min": 0, "max": 500,
+            "thresholds": {"mode": "absolute", "steps": [
+              {"color": "green", "value": null},
+              {"color": "#5794F2", "value": 100},
+              {"color": "yellow", "value": 150},
+              {"color": "orange", "value": 250},
+              {"color": "red", "value": 400}
+            ]},
+            "color": {"mode": "thresholds"}
+          }
+        },
+        "targets": [{"expr": "hass_sensor_state{entity=\"sensor.i_9psl_voc_index\"}", "legendFormat": "VOC", "refId": "A"}],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 4, "type": "gauge", "title": "NOx Index",
+        "gridPos": {"h": 8, "w": 4, "x": 12, "y": 0},
+        "fieldConfig": {
+          "defaults": {
+            "min": 0, "max": 500,
+            "thresholds": {"mode": "absolute", "steps": [
+              {"color": "green", "value": null},
+              {"color": "yellow", "value": 20},
+              {"color": "orange", "value": 50},
+              {"color": "red", "value": 100},
+              {"color": "dark-red", "value": 300}
+            ]},
+            "color": {"mode": "thresholds"}
+          }
+        },
+        "targets": [{"expr": "hass_sensor_state{entity=\"sensor.i_9psl_nox_index\"}", "legendFormat": "NOx", "refId": "A"}],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 5, "type": "stat", "title": "Temperature",
+        "gridPos": {"h": 8, "w": 4, "x": 16, "y": 0},
+        "fieldConfig": {
+          "defaults": {
+            "unit": "celsius", "min": 10, "max": 40,
+            "thresholds": {"mode": "absolute", "steps": [
+              {"color": "blue", "value": null},
+              {"color": "green", "value": 18},
+              {"color": "yellow", "value": 26},
+              {"color": "orange", "value": 30},
+              {"color": "red", "value": 35}
+            ]},
+            "color": {"mode": "thresholds"}
+          }
+        },
+        "options": {"graphMode": "area", "textMode": "auto"},
+        "targets": [{"expr": "hass_sensor_temperature_celsius{entity=\"sensor.i_9psl_temperature\"}", "legendFormat": "Temp", "refId": "A"}],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 6, "type": "stat", "title": "Humidity",
+        "gridPos": {"h": 8, "w": 4, "x": 20, "y": 0},
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percent", "min": 0, "max": 100,
+            "thresholds": {"mode": "absolute", "steps": [
+              {"color": "red", "value": null},
+              {"color": "orange", "value": 25},
+              {"color": "yellow", "value": 30},
+              {"color": "green", "value": 40},
+              {"color": "yellow", "value": 55},
+              {"color": "orange", "value": 60},
+              {"color": "red", "value": 70}
+            ]},
+            "color": {"mode": "thresholds"}
+          }
+        },
+        "options": {"graphMode": "area", "textMode": "auto"},
+        "targets": [{"expr": "hass_sensor_humidity_percent{entity=\"sensor.i_9psl_humidity\"}", "legendFormat": "Humidity", "refId": "A"}],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 7, "type": "timeseries", "title": "CO₂ (ppm)",
+        "gridPos": {"h": 8, "w": 24, "x": 0, "y": 8},
+        "fieldConfig": {
+          "defaults": {
+            "unit": "ppm",
+            "custom": {"fillOpacity": 10, "lineWidth": 2, "spanNulls": true},
+            "thresholds": {"mode": "absolute", "steps": [
+              {"color": "green", "value": null},
+              {"color": "yellow", "value": 800},
+              {"color": "orange", "value": 1000},
+              {"color": "red", "value": 1500}
+            ]},
+            "color": {"mode": "palette-classic"}
+          }
+        },
+        "options": {"tooltip": {"mode": "single"}},
+        "targets": [
+          {"expr": "hass_sensor_carbon_dioxide_ppm{entity=\"sensor.i_9psl_carbon_dioxide\"}", "legendFormat": "CO₂", "refId": "A"},
+          {"expr": "hass_switch_state{entity=\"switch.extractor_bano_extractor_bano\"} * 700", "legendFormat": "Extractor (700=ON)", "refId": "B"}
+        ],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 8, "type": "timeseries", "title": "Particulate Matter",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 16},
+        "fieldConfig": {
+          "defaults": {
+            "unit": "µg/m³",
+            "custom": {"fillOpacity": 10, "lineWidth": 2, "spanNulls": true},
+            "color": {"mode": "palette-classic"}
+          }
+        },
+        "targets": [
+          {"expr": "hass_sensor_pm25_u0xb5g_per_mu0xb3{entity=\"sensor.i_9psl_pm2_5\"}", "legendFormat": "PM2.5", "refId": "A"},
+          {"expr": "hass_sensor_pm10_u0xb5g_per_mu0xb3{entity=\"sensor.i_9psl_pm10\"}", "legendFormat": "PM10", "refId": "B"},
+          {"expr": "hass_sensor_pm1_u0xb5g_per_mu0xb3{entity=\"sensor.i_9psl_pm1\"}", "legendFormat": "PM1", "refId": "C"}
+        ],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 9, "type": "timeseries", "title": "VOC & NOx Index",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 16},
+        "fieldConfig": {
+          "defaults": {
+            "custom": {"fillOpacity": 10, "lineWidth": 2, "spanNulls": true},
+            "color": {"mode": "palette-classic"}
+          }
+        },
+        "targets": [
+          {"expr": "hass_sensor_state{entity=\"sensor.i_9psl_voc_index\"}", "legendFormat": "VOC Index", "refId": "A"},
+          {"expr": "hass_sensor_state{entity=\"sensor.i_9psl_nox_index\"}", "legendFormat": "NOx Index", "refId": "B"}
+        ],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 10, "type": "timeseries", "title": "Temperature",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 24},
+        "fieldConfig": {
+          "defaults": {
+            "unit": "celsius",
+            "custom": {"fillOpacity": 10, "lineWidth": 2, "spanNulls": true},
+            "thresholds": {"mode": "absolute", "steps": [
+              {"color": "blue", "value": null},
+              {"color": "green", "value": 18},
+              {"color": "orange", "value": 26},
+              {"color": "red", "value": 30}
+            ]},
+            "color": {"mode": "palette-classic"}
+          }
+        },
+        "targets": [{"expr": "hass_sensor_temperature_celsius{entity=\"sensor.i_9psl_temperature\"}", "legendFormat": "Temperature", "refId": "A"}],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 11, "type": "timeseries", "title": "Humidity",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 24},
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percent",
+            "custom": {"fillOpacity": 10, "lineWidth": 2, "spanNulls": true},
+            "thresholds": {"mode": "absolute", "steps": [
+              {"color": "red", "value": null},
+              {"color": "orange", "value": 30},
+              {"color": "green", "value": 40},
+              {"color": "orange", "value": 60},
+              {"color": "red", "value": 70}
+            ]},
+            "color": {"mode": "palette-classic"}
+          }
+        },
+        "targets": [{"expr": "hass_sensor_humidity_percent{entity=\"sensor.i_9psl_humidity\"}", "legendFormat": "Humidity", "refId": "A"}],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 12, "type": "state-timeline", "title": "Extractor Baño",
+        "gridPos": {"h": 4, "w": 24, "x": 0, "y": 32},
+        "fieldConfig": {
+          "defaults": {
+            "custom": {"fillOpacity": 70, "lineWidth": 0},
+            "color": {"mode": "thresholds"},
+            "thresholds": {"mode": "absolute", "steps": [
+              {"color": "#2C3235", "value": null},
+              {"color": "green", "value": 1}
+            ]},
+            "mappings": [
+              {"type": "value", "options": {"0": {"text": "OFF", "color": "#2C3235"}, "1": {"text": "ON", "color": "green"}}}
+            ]
+          }
+        },
+        "options": {"mergeValues": true, "showValue": "auto", "rowHeight": 0.8},
+        "targets": [{"expr": "hass_switch_state{entity=\"switch.extractor_bano_extractor_bano\"}", "legendFormat": "Extractor", "refId": "A"}],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 13, "type": "timeseries", "title": "PM0.3 Count",
+        "gridPos": {"h": 6, "w": 18, "x": 0, "y": 36},
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short",
+            "custom": {"fillOpacity": 10, "lineWidth": 2, "spanNulls": true},
+            "color": {"mode": "palette-classic"}
+          }
+        },
+        "targets": [{"expr": "hass_sensor_unit_particles_per_dl{entity=\"sensor.i_9psl_pm0_3\"}", "legendFormat": "PM0.3 particles/dL", "refId": "A"}],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      },
+      {
+        "id": 14, "type": "stat", "title": "WiFi Signal",
+        "gridPos": {"h": 6, "w": 6, "x": 18, "y": 36},
+        "fieldConfig": {
+          "defaults": {
+            "unit": "dBm",
+            "thresholds": {"mode": "absolute", "steps": [
+              {"color": "red", "value": null},
+              {"color": "orange", "value": -70},
+              {"color": "yellow", "value": -50},
+              {"color": "green", "value": -30}
+            ]},
+            "color": {"mode": "thresholds"}
+          }
+        },
+        "options": {"graphMode": "area", "textMode": "auto"},
+        "targets": [{"expr": "hass_sensor_state{entity=\"sensor.i_9psl_signal_strength\"}", "legendFormat": "WiFi", "refId": "A"}],
+        "datasource": {"type": "prometheus", "uid": "ds_prometheus"}
+      }
+    ],
+    "schemaVersion": 39
+  },
+  "overwrite": true
+}
