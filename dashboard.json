@@ -1,12 +1,20 @@
 {
   "dashboard": {
     "uid": "airgradient-bano",
-    "title": "Air Quality - Baño",
-    "description": "AirGradient ONE indoor air quality monitor — bathroom environment with extractor fan correlation",
-    "tags": ["airgradient", "air-quality", "bano", "home-assistant"],
+    "title": "Air Quality - Ba\u00f1o",
+    "description": "AirGradient ONE indoor air quality monitor \u2014 bathroom environment with extractor fan correlation",
+    "tags": [
+      "airgradient",
+      "air-quality",
+      "bano",
+      "home-assistant"
+    ],
     "timezone": "browser",
     "refresh": "30s",
-    "time": { "from": "now-24h", "to": "now" },
+    "time": {
+      "from": "now-24h",
+      "to": "now"
+    },
     "schemaVersion": 39,
     "pluginVersion": "13.0.1",
     "editable": true,
@@ -18,22 +26,38 @@
         "id": 1,
         "type": "text",
         "title": "",
-        "gridPos": { "h": 2, "w": 24, "x": 0, "y": 0 },
+        "gridPos": {
+          "h": 2,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
         "transparent": true,
         "options": {
           "mode": "markdown",
-          "content": "# AirGradient ONE  /  Baño\nCO2 / PM / VOC / NOx / Temperature / Humidity  ---  Extractor fan correlation  ---  24h window",
-          "code": { "language": "plaintext", "showLineNumbers": false, "showMiniMap": false }
+          "content": "# AirGradient ONE  /  Ba\u00f1o\nCO2 / PM / VOC / NOx / Temperature / Humidity  ---  Extractor fan correlation  ---  24h window",
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          }
         },
-        "datasource": { "type": "datasource", "uid": "-- Dashboard --" }
+        "datasource": {
+          "type": "datasource",
+          "uid": "-- Dashboard --"
+        }
       },
-
       {
         "id": 2,
         "type": "gauge",
         "title": "CO\u2082",
         "description": "Carbon dioxide concentration. <600 excellent, 600-800 good, 800-1000 fair, >1000 poor, >1500 bad.",
-        "gridPos": { "h": 7, "w": 6, "x": 0, "y": 2 },
+        "gridPos": {
+          "h": 7,
+          "w": 6,
+          "x": 0,
+          "y": 2
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -44,22 +68,44 @@
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "#73BF69", "value": null },
-                { "color": "#5794F2", "value": 600 },
-                { "color": "#FADE2A", "value": 800 },
-                { "color": "#FF9830", "value": 1000 },
-                { "color": "#F2495C", "value": 1500 },
-                { "color": "#C4162A", "value": 2000 }
+                {
+                  "color": "#73BF69",
+                  "value": null
+                },
+                {
+                  "color": "#5794F2",
+                  "value": 600
+                },
+                {
+                  "color": "#FADE2A",
+                  "value": 800
+                },
+                {
+                  "color": "#FF9830",
+                  "value": 1000
+                },
+                {
+                  "color": "#F2495C",
+                  "value": 1500
+                },
+                {
+                  "color": "#C4162A",
+                  "value": 2000
+                }
               ]
             },
-            "color": { "mode": "thresholds" }
+            "color": {
+              "mode": "thresholds"
+            }
           },
           "overrides": []
         },
         "options": {
           "reduceOptions": {
             "values": false,
-            "calcs": ["lastNotNull"],
+            "calcs": [
+              "lastNotNull"
+            ],
             "fields": ""
           },
           "showThresholdLabels": false,
@@ -70,7 +116,10 @@
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_carbon_dioxide_ppm{entity=\"sensor.i_9psl_carbon_dioxide\"}",
             "legendFormat": "CO\u2082",
             "refId": "A",
@@ -78,15 +127,22 @@
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 3,
         "type": "gauge",
         "title": "PM2.5",
         "description": "Fine particulate matter. WHO 24h guideline: 15 \u00b5g/m\u00b3. <5 excellent, 5-12 good, 12-35 moderate, >35 unhealthy.",
-        "gridPos": { "h": 7, "w": 4, "x": 6, "y": 2 },
+        "gridPos": {
+          "h": 7,
+          "w": 4,
+          "x": 6,
+          "y": 2
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -97,22 +153,44 @@
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "#73BF69", "value": null },
-                { "color": "#96D98D", "value": 5 },
-                { "color": "#FADE2A", "value": 12 },
-                { "color": "#FF9830", "value": 35 },
-                { "color": "#F2495C", "value": 55 },
-                { "color": "#8F3BB8", "value": 125 }
+                {
+                  "color": "#73BF69",
+                  "value": null
+                },
+                {
+                  "color": "#96D98D",
+                  "value": 5
+                },
+                {
+                  "color": "#FADE2A",
+                  "value": 12
+                },
+                {
+                  "color": "#FF9830",
+                  "value": 35
+                },
+                {
+                  "color": "#F2495C",
+                  "value": 55
+                },
+                {
+                  "color": "#8F3BB8",
+                  "value": 125
+                }
               ]
             },
-            "color": { "mode": "thresholds" }
+            "color": {
+              "mode": "thresholds"
+            }
           },
           "overrides": []
         },
         "options": {
           "reduceOptions": {
             "values": false,
-            "calcs": ["lastNotNull"],
+            "calcs": [
+              "lastNotNull"
+            ],
             "fields": ""
           },
           "showThresholdLabels": false,
@@ -123,7 +201,10 @@
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_pm25_u0xb5g_per_mu0xb3{entity=\"sensor.i_9psl_pm2_5\"}",
             "legendFormat": "PM2.5",
             "refId": "A",
@@ -131,15 +212,22 @@
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 4,
         "type": "gauge",
         "title": "VOC Index",
         "description": "Volatile organic compounds Sensirion index. 100 = baseline, <100 improving, >100 worsening. Max 500.",
-        "gridPos": { "h": 7, "w": 4, "x": 10, "y": 2 },
+        "gridPos": {
+          "h": 7,
+          "w": 4,
+          "x": 10,
+          "y": 2
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -149,21 +237,40 @@
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "#73BF69", "value": null },
-                { "color": "#5794F2", "value": 100 },
-                { "color": "#FADE2A", "value": 150 },
-                { "color": "#FF9830", "value": 250 },
-                { "color": "#F2495C", "value": 400 }
+                {
+                  "color": "#73BF69",
+                  "value": null
+                },
+                {
+                  "color": "#5794F2",
+                  "value": 100
+                },
+                {
+                  "color": "#FADE2A",
+                  "value": 150
+                },
+                {
+                  "color": "#FF9830",
+                  "value": 250
+                },
+                {
+                  "color": "#F2495C",
+                  "value": 400
+                }
               ]
             },
-            "color": { "mode": "thresholds" }
+            "color": {
+              "mode": "thresholds"
+            }
           },
           "overrides": []
         },
         "options": {
           "reduceOptions": {
             "values": false,
-            "calcs": ["lastNotNull"],
+            "calcs": [
+              "lastNotNull"
+            ],
             "fields": ""
           },
           "showThresholdLabels": false,
@@ -174,7 +281,10 @@
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_state{entity=\"sensor.i_9psl_voc_index\"}",
             "legendFormat": "VOC",
             "refId": "A",
@@ -182,15 +292,22 @@
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 5,
         "type": "gauge",
         "title": "NOx Index",
         "description": "Nitrogen oxides Sensirion index. <20 clean, 20-50 moderate, >100 high. Bathroom-relevant from combustion or external sources.",
-        "gridPos": { "h": 7, "w": 4, "x": 14, "y": 2 },
+        "gridPos": {
+          "h": 7,
+          "w": 4,
+          "x": 14,
+          "y": 2
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -200,21 +317,40 @@
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "#73BF69", "value": null },
-                { "color": "#FADE2A", "value": 20 },
-                { "color": "#FF9830", "value": 50 },
-                { "color": "#F2495C", "value": 100 },
-                { "color": "#C4162A", "value": 300 }
+                {
+                  "color": "#73BF69",
+                  "value": null
+                },
+                {
+                  "color": "#FADE2A",
+                  "value": 20
+                },
+                {
+                  "color": "#FF9830",
+                  "value": 50
+                },
+                {
+                  "color": "#F2495C",
+                  "value": 100
+                },
+                {
+                  "color": "#C4162A",
+                  "value": 300
+                }
               ]
             },
-            "color": { "mode": "thresholds" }
+            "color": {
+              "mode": "thresholds"
+            }
           },
           "overrides": []
         },
         "options": {
           "reduceOptions": {
             "values": false,
-            "calcs": ["lastNotNull"],
+            "calcs": [
+              "lastNotNull"
+            ],
             "fields": ""
           },
           "showThresholdLabels": false,
@@ -225,7 +361,10 @@
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_state{entity=\"sensor.i_9psl_nox_index\"}",
             "legendFormat": "NOx",
             "refId": "A",
@@ -233,15 +372,22 @@
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 6,
         "type": "stat",
         "title": "Temperature",
         "description": "Ambient temperature from AirGradient ONE SHT4x sensor.",
-        "gridPos": { "h": 7, "w": 3, "x": 18, "y": 2 },
+        "gridPos": {
+          "h": 7,
+          "w": 3,
+          "x": 18,
+          "y": 2
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -252,14 +398,31 @@
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "#5794F2", "value": null },
-                { "color": "#73BF69", "value": 18 },
-                { "color": "#FADE2A", "value": 26 },
-                { "color": "#FF9830", "value": 30 },
-                { "color": "#F2495C", "value": 35 }
+                {
+                  "color": "#5794F2",
+                  "value": null
+                },
+                {
+                  "color": "#73BF69",
+                  "value": 18
+                },
+                {
+                  "color": "#FADE2A",
+                  "value": 26
+                },
+                {
+                  "color": "#FF9830",
+                  "value": 30
+                },
+                {
+                  "color": "#F2495C",
+                  "value": 35
+                }
               ]
             },
-            "color": { "mode": "thresholds" }
+            "color": {
+              "mode": "thresholds"
+            }
           },
           "overrides": []
         },
@@ -269,7 +432,9 @@
           "wideLayout": true,
           "reduceOptions": {
             "values": false,
-            "calcs": ["lastNotNull"],
+            "calcs": [
+              "lastNotNull"
+            ],
             "fields": ""
           },
           "colorMode": "value",
@@ -279,7 +444,10 @@
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_temperature_celsius{entity=\"sensor.i_9psl_temperature\"}",
             "legendFormat": "Temp",
             "refId": "A",
@@ -287,15 +455,22 @@
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 7,
         "type": "stat",
         "title": "Humidity",
         "description": "Relative humidity from AirGradient ONE SHT4x sensor. 40-55% optimal for bathrooms.",
-        "gridPos": { "h": 7, "w": 3, "x": 21, "y": 2 },
+        "gridPos": {
+          "h": 7,
+          "w": 3,
+          "x": 21,
+          "y": 2
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -306,16 +481,39 @@
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "#F2495C", "value": null },
-                { "color": "#FF9830", "value": 25 },
-                { "color": "#FADE2A", "value": 30 },
-                { "color": "#73BF69", "value": 40 },
-                { "color": "#FADE2A", "value": 55 },
-                { "color": "#FF9830", "value": 60 },
-                { "color": "#F2495C", "value": 70 }
+                {
+                  "color": "#F2495C",
+                  "value": null
+                },
+                {
+                  "color": "#FF9830",
+                  "value": 25
+                },
+                {
+                  "color": "#FADE2A",
+                  "value": 30
+                },
+                {
+                  "color": "#73BF69",
+                  "value": 40
+                },
+                {
+                  "color": "#FADE2A",
+                  "value": 55
+                },
+                {
+                  "color": "#FF9830",
+                  "value": 60
+                },
+                {
+                  "color": "#F2495C",
+                  "value": 70
+                }
               ]
             },
-            "color": { "mode": "thresholds" }
+            "color": {
+              "mode": "thresholds"
+            }
           },
           "overrides": []
         },
@@ -325,7 +523,9 @@
           "wideLayout": true,
           "reduceOptions": {
             "values": false,
-            "calcs": ["lastNotNull"],
+            "calcs": [
+              "lastNotNull"
+            ],
             "fields": ""
           },
           "colorMode": "value",
@@ -335,7 +535,10 @@
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_humidity_percent{entity=\"sensor.i_9psl_humidity\"}",
             "legendFormat": "Humidity",
             "refId": "A",
@@ -343,15 +546,22 @@
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 8,
         "type": "state-timeline",
         "title": "Extractor Fan",
         "description": "Bathroom extractor fan ON/OFF state over time.",
-        "gridPos": { "h": 3, "w": 24, "x": 0, "y": 9 },
+        "gridPos": {
+          "h": 3,
+          "w": 24,
+          "x": 0,
+          "y": 9
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -359,20 +569,34 @@
               "fillOpacity": 80,
               "lineWidth": 0
             },
-            "color": { "mode": "thresholds" },
+            "color": {
+              "mode": "thresholds"
+            },
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "#2C3235", "value": null },
-                { "color": "#73BF69", "value": 1 }
+                {
+                  "color": "#2C3235",
+                  "value": null
+                },
+                {
+                  "color": "#73BF69",
+                  "value": 1
+                }
               ]
             },
             "mappings": [
               {
                 "type": "value",
                 "options": {
-                  "0": { "text": "OFF", "color": "#2C3235" },
-                  "1": { "text": "ON", "color": "#73BF69" }
+                  "0": {
+                    "text": "OFF",
+                    "color": "#2C3235"
+                  },
+                  "1": {
+                    "text": "ON",
+                    "color": "#73BF69"
+                  }
                 }
               }
             ]
@@ -384,27 +608,43 @@
           "showValue": "auto",
           "alignValue": "center",
           "rowHeight": 0.85,
-          "legend": { "displayMode": "hidden", "placement": "bottom" },
-          "tooltip": { "mode": "single", "sort": "none" }
+          "legend": {
+            "displayMode": "hidden",
+            "placement": "bottom"
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_switch_state{entity=\"switch.extractor_bano_extractor_bano\"}",
             "legendFormat": "Extractor",
             "refId": "A",
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 9,
         "type": "timeseries",
         "title": "CO\u2082 Concentration",
         "description": "CO2 with extractor fan overlay. When the extractor is ON, an orange dashed line appears at 700 ppm for visual correlation.",
-        "gridPos": { "h": 8, "w": 24, "x": 0, "y": 12 },
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 12
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -421,75 +661,161 @@
               "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
-              "scaleDistribution": { "type": "linear" },
-              "hideFrom": { "tooltip": false, "viz": false, "legend": false },
-              "thresholdsStyle": { "mode": "line" }
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "hideFrom": {
+                "tooltip": false,
+                "viz": false,
+                "legend": false
+              },
+              "thresholdsStyle": {
+                "mode": "line"
+              }
             },
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "transparent", "value": null },
-                { "color": "#FADE2A", "value": 800 },
-                { "color": "#F2495C", "value": 1000 }
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "#FADE2A",
+                  "value": 800
+                },
+                {
+                  "color": "#F2495C",
+                  "value": 1000
+                }
               ]
             },
-            "color": { "mode": "palette-classic" }
+            "color": {
+              "mode": "palette-classic"
+            }
           },
           "overrides": [
             {
-              "matcher": { "id": "byName", "options": "CO\u2082" },
+              "matcher": {
+                "id": "byName",
+                "options": "CO\u2082"
+              },
               "properties": [
-                { "id": "color", "value": { "mode": "fixed", "fixedColor": "#73BF69" } },
-                { "id": "custom.fillOpacity", "value": 20 },
-                { "id": "custom.lineWidth", "value": 2 },
-                { "id": "custom.gradientMode", "value": "scheme" }
+                {
+                  "id": "color",
+                  "value": {
+                    "mode": "fixed",
+                    "fixedColor": "#73BF69"
+                  }
+                },
+                {
+                  "id": "custom.fillOpacity",
+                  "value": 20
+                },
+                {
+                  "id": "custom.lineWidth",
+                  "value": 2
+                },
+                {
+                  "id": "custom.gradientMode",
+                  "value": "scheme"
+                }
               ]
             },
             {
-              "matcher": { "id": "byName", "options": "Extractor (700=ON)" },
+              "matcher": {
+                "id": "byName",
+                "options": "Extractor (700=ON)"
+              },
               "properties": [
-                { "id": "color", "value": { "mode": "fixed", "fixedColor": "#FF9830" } },
-                { "id": "custom.fillOpacity", "value": 5 },
-                { "id": "custom.lineWidth", "value": 2 },
-                { "id": "custom.lineStyle", "value": { "fill": "dash", "dash": [10, 8] } },
-                { "id": "custom.thresholdsStyle", "value": { "mode": "off" } }
+                {
+                  "id": "color",
+                  "value": {
+                    "mode": "fixed",
+                    "fixedColor": "#FF9830"
+                  }
+                },
+                {
+                  "id": "custom.fillOpacity",
+                  "value": 5
+                },
+                {
+                  "id": "custom.lineWidth",
+                  "value": 2
+                },
+                {
+                  "id": "custom.lineStyle",
+                  "value": {
+                    "fill": "dash",
+                    "dash": [
+                      10,
+                      8
+                    ]
+                  }
+                },
+                {
+                  "id": "custom.thresholdsStyle",
+                  "value": {
+                    "mode": "off"
+                  }
+                }
               ]
             }
           ]
         },
         "options": {
-          "tooltip": { "mode": "multi", "sort": "desc" },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "desc"
+          },
           "legend": {
             "displayMode": "list",
             "placement": "bottom",
-            "calcs": ["mean", "max", "lastNotNull"]
+            "calcs": [
+              "mean",
+              "max",
+              "lastNotNull"
+            ]
           }
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_carbon_dioxide_ppm{entity=\"sensor.i_9psl_carbon_dioxide\"}",
             "legendFormat": "CO\u2082",
             "refId": "A",
             "format": "time_series"
           },
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
-            "expr": "hass_switch_state{entity=\"switch.extractor_bano_extractor_bano\"} * 700",
-            "legendFormat": "Extractor (700=ON)",
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
+            "expr": "hass_switch_state{entity=\"switch.extractor_bano_extractor_bano\"} * 500",
+            "legendFormat": "Extractor (500=ON)",
             "refId": "B",
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 10,
         "type": "timeseries",
         "title": "Particulate Matter",
         "description": "PM1, PM2.5, and PM10 as stacked area. WHO 24h guidelines: PM2.5 <15, PM10 <45 \u00b5g/m\u00b3.",
-        "gridPos": { "h": 7, "w": 12, "x": 0, "y": 20 },
+        "gridPos": {
+          "h": 7,
+          "w": 12,
+          "x": 0,
+          "y": 20
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -502,85 +828,160 @@
               "pointSize": 5,
               "showPoints": "never",
               "lineInterpolation": "smooth",
-              "stacking": { "mode": "normal", "group": "A" },
+              "stacking": {
+                "mode": "normal",
+                "group": "A"
+              },
               "axisPlacement": "auto",
               "axisBorderShow": false,
-              "scaleDistribution": { "type": "linear" },
-              "hideFrom": { "tooltip": false, "viz": false, "legend": false },
-              "thresholdsStyle": { "mode": "off" }
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "hideFrom": {
+                "tooltip": false,
+                "viz": false,
+                "legend": false
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
             },
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "green", "value": null }
+                {
+                  "color": "green",
+                  "value": null
+                }
               ]
             },
-            "color": { "mode": "palette-classic" }
+            "color": {
+              "mode": "palette-classic"
+            }
           },
           "overrides": [
             {
-              "matcher": { "id": "byName", "options": "PM1" },
+              "matcher": {
+                "id": "byName",
+                "options": "PM1"
+              },
               "properties": [
-                { "id": "color", "value": { "mode": "fixed", "fixedColor": "#8AB8FF" } },
-                { "id": "custom.fillOpacity", "value": 30 }
+                {
+                  "id": "color",
+                  "value": {
+                    "mode": "fixed",
+                    "fixedColor": "#8AB8FF"
+                  }
+                },
+                {
+                  "id": "custom.fillOpacity",
+                  "value": 30
+                }
               ]
             },
             {
-              "matcher": { "id": "byName", "options": "PM2.5" },
+              "matcher": {
+                "id": "byName",
+                "options": "PM2.5"
+              },
               "properties": [
-                { "id": "color", "value": { "mode": "fixed", "fixedColor": "#FF9830" } },
-                { "id": "custom.fillOpacity", "value": 25 }
+                {
+                  "id": "color",
+                  "value": {
+                    "mode": "fixed",
+                    "fixedColor": "#FF9830"
+                  }
+                },
+                {
+                  "id": "custom.fillOpacity",
+                  "value": 25
+                }
               ]
             },
             {
-              "matcher": { "id": "byName", "options": "PM10" },
+              "matcher": {
+                "id": "byName",
+                "options": "PM10"
+              },
               "properties": [
-                { "id": "color", "value": { "mode": "fixed", "fixedColor": "#F2495C" } },
-                { "id": "custom.fillOpacity", "value": 20 }
+                {
+                  "id": "color",
+                  "value": {
+                    "mode": "fixed",
+                    "fixedColor": "#F2495C"
+                  }
+                },
+                {
+                  "id": "custom.fillOpacity",
+                  "value": 20
+                }
               ]
             }
           ]
         },
         "options": {
-          "tooltip": { "mode": "multi", "sort": "desc" },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "desc"
+          },
           "legend": {
             "displayMode": "list",
             "placement": "bottom",
-            "calcs": ["mean", "max", "lastNotNull"]
+            "calcs": [
+              "mean",
+              "max",
+              "lastNotNull"
+            ]
           }
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_pm1_u0xb5g_per_mu0xb3{entity=\"sensor.i_9psl_pm1\"}",
             "legendFormat": "PM1",
             "refId": "A",
             "format": "time_series"
           },
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_pm25_u0xb5g_per_mu0xb3{entity=\"sensor.i_9psl_pm2_5\"}",
             "legendFormat": "PM2.5",
             "refId": "B",
             "format": "time_series"
           },
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_pm10_u0xb5g_per_mu0xb3{entity=\"sensor.i_9psl_pm10\"}",
             "legendFormat": "PM10",
             "refId": "C",
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 11,
         "type": "timeseries",
         "title": "VOC & NOx Index",
         "description": "Sensirion SGP41 gas indices. Baseline is 100 for VOC, 1 for NOx. Values above baseline indicate worsening air quality.",
-        "gridPos": { "h": 7, "w": 12, "x": 12, "y": 20 },
+        "gridPos": {
+          "h": 7,
+          "w": 12,
+          "x": 12,
+          "y": 20
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -594,73 +995,139 @@
               "lineInterpolation": "smooth",
               "axisPlacement": "auto",
               "axisBorderShow": false,
-              "scaleDistribution": { "type": "linear" },
-              "hideFrom": { "tooltip": false, "viz": false, "legend": false },
-              "thresholdsStyle": { "mode": "off" }
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "hideFrom": {
+                "tooltip": false,
+                "viz": false,
+                "legend": false
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
             },
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "green", "value": null }
+                {
+                  "color": "green",
+                  "value": null
+                }
               ]
             },
-            "color": { "mode": "palette-classic" },
+            "color": {
+              "mode": "palette-classic"
+            },
             "min": 0,
             "max": 500
           },
           "overrides": [
             {
-              "matcher": { "id": "byName", "options": "VOC Index" },
+              "matcher": {
+                "id": "byName",
+                "options": "VOC Index"
+              },
               "properties": [
-                { "id": "color", "value": { "mode": "fixed", "fixedColor": "#B877D9" } },
-                { "id": "custom.fillOpacity", "value": 18 },
-                { "id": "custom.gradientMode", "value": "scheme" }
+                {
+                  "id": "color",
+                  "value": {
+                    "mode": "fixed",
+                    "fixedColor": "#B877D9"
+                  }
+                },
+                {
+                  "id": "custom.fillOpacity",
+                  "value": 18
+                },
+                {
+                  "id": "custom.gradientMode",
+                  "value": "scheme"
+                }
               ]
             },
             {
-              "matcher": { "id": "byName", "options": "NOx Index" },
+              "matcher": {
+                "id": "byName",
+                "options": "NOx Index"
+              },
               "properties": [
-                { "id": "color", "value": { "mode": "fixed", "fixedColor": "#FF6D00" } },
-                { "id": "custom.fillOpacity", "value": 12 },
-                { "id": "custom.axisPlacement", "value": "right" },
-                { "id": "custom.axisSoftMax", "value": 150 }
+                {
+                  "id": "color",
+                  "value": {
+                    "mode": "fixed",
+                    "fixedColor": "#FF6D00"
+                  }
+                },
+                {
+                  "id": "custom.fillOpacity",
+                  "value": 12
+                },
+                {
+                  "id": "custom.axisPlacement",
+                  "value": "right"
+                },
+                {
+                  "id": "custom.axisSoftMax",
+                  "value": 150
+                }
               ]
             }
           ]
         },
         "options": {
-          "tooltip": { "mode": "multi", "sort": "desc" },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "desc"
+          },
           "legend": {
             "displayMode": "list",
             "placement": "bottom",
-            "calcs": ["mean", "max", "lastNotNull"]
+            "calcs": [
+              "mean",
+              "max",
+              "lastNotNull"
+            ]
           }
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_state{entity=\"sensor.i_9psl_voc_index\"}",
             "legendFormat": "VOC Index",
             "refId": "A",
             "format": "time_series"
           },
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_state{entity=\"sensor.i_9psl_nox_index\"}",
             "legendFormat": "NOx Index",
             "refId": "B",
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 12,
         "type": "timeseries",
         "title": "Temperature",
         "description": "Bathroom ambient temperature with comfort zone thresholds. 18-26\u00b0C optimal.",
-        "gridPos": { "h": 7, "w": 12, "x": 0, "y": 27 },
+        "gridPos": {
+          "h": 7,
+          "w": 12,
+          "x": 0,
+          "y": 27
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -675,50 +1142,90 @@
               "lineInterpolation": "smooth",
               "axisPlacement": "auto",
               "axisBorderShow": false,
-              "scaleDistribution": { "type": "linear" },
-              "hideFrom": { "tooltip": false, "viz": false, "legend": false },
-              "thresholdsStyle": { "mode": "line" },
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "hideFrom": {
+                "tooltip": false,
+                "viz": false,
+                "legend": false
+              },
+              "thresholdsStyle": {
+                "mode": "line"
+              },
               "gradientMode": "scheme"
             },
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "#5794F2", "value": null },
-                { "color": "#73BF69", "value": 18 },
-                { "color": "#FADE2A", "value": 26 },
-                { "color": "#FF9830", "value": 30 }
+                {
+                  "color": "#5794F2",
+                  "value": null
+                },
+                {
+                  "color": "#73BF69",
+                  "value": 18
+                },
+                {
+                  "color": "#FADE2A",
+                  "value": 26
+                },
+                {
+                  "color": "#FF9830",
+                  "value": 30
+                }
               ]
             },
-            "color": { "mode": "thresholds" }
+            "color": {
+              "mode": "thresholds"
+            }
           },
           "overrides": []
         },
         "options": {
-          "tooltip": { "mode": "multi", "sort": "desc" },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "desc"
+          },
           "legend": {
             "displayMode": "list",
             "placement": "bottom",
-            "calcs": ["mean", "min", "max", "lastNotNull"]
+            "calcs": [
+              "mean",
+              "min",
+              "max",
+              "lastNotNull"
+            ]
           }
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_temperature_celsius{entity=\"sensor.i_9psl_temperature\"}",
             "legendFormat": "Temperature",
             "refId": "A",
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 13,
         "type": "timeseries",
         "title": "Humidity",
         "description": "Relative humidity with mold-risk and comfort thresholds. 40-60% optimal for bathrooms, >70% mold risk.",
-        "gridPos": { "h": 7, "w": 12, "x": 12, "y": 27 },
+        "gridPos": {
+          "h": 7,
+          "w": 12,
+          "x": 12,
+          "y": 27
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -733,53 +1240,96 @@
               "lineInterpolation": "smooth",
               "axisPlacement": "auto",
               "axisBorderShow": false,
-              "scaleDistribution": { "type": "linear" },
-              "hideFrom": { "tooltip": false, "viz": false, "legend": false },
-              "thresholdsStyle": { "mode": "line+area" },
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "hideFrom": {
+                "tooltip": false,
+                "viz": false,
+                "legend": false
+              },
+              "thresholdsStyle": {
+                "mode": "line+area"
+              },
               "gradientMode": "scheme"
             },
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "#F2495C", "value": null },
-                { "color": "#FF9830", "value": 30 },
-                { "color": "#73BF69", "value": 40 },
-                { "color": "#FF9830", "value": 60 },
-                { "color": "#F2495C", "value": 70 }
+                {
+                  "color": "#F2495C",
+                  "value": null
+                },
+                {
+                  "color": "#FF9830",
+                  "value": 30
+                },
+                {
+                  "color": "#73BF69",
+                  "value": 40
+                },
+                {
+                  "color": "#FF9830",
+                  "value": 60
+                },
+                {
+                  "color": "#F2495C",
+                  "value": 70
+                }
               ]
             },
-            "color": { "mode": "thresholds" },
+            "color": {
+              "mode": "thresholds"
+            },
             "min": 0,
             "max": 100
           },
           "overrides": []
         },
         "options": {
-          "tooltip": { "mode": "multi", "sort": "desc" },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "desc"
+          },
           "legend": {
             "displayMode": "list",
             "placement": "bottom",
-            "calcs": ["mean", "min", "max", "lastNotNull"]
+            "calcs": [
+              "mean",
+              "min",
+              "max",
+              "lastNotNull"
+            ]
           }
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_humidity_percent{entity=\"sensor.i_9psl_humidity\"}",
             "legendFormat": "Humidity",
             "refId": "A",
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 14,
         "type": "timeseries",
         "title": "PM0.3 Particle Count",
         "description": "Ultra-fine particles (0.3\u00b5m). Most sensitive indicator of air quality changes and filtration effectiveness.",
-        "gridPos": { "h": 5, "w": 16, "x": 0, "y": 34 },
+        "gridPos": {
+          "h": 5,
+          "w": 16,
+          "x": 0,
+          "y": 34
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -795,47 +1345,78 @@
               "axisPlacement": "auto",
               "axisBorderShow": false,
               "axisLabel": "particles/dL",
-              "scaleDistribution": { "type": "linear" },
-              "hideFrom": { "tooltip": false, "viz": false, "legend": false },
-              "thresholdsStyle": { "mode": "off" },
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "hideFrom": {
+                "tooltip": false,
+                "viz": false,
+                "legend": false
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              },
               "gradientMode": "opacity"
             },
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "#73BF69", "value": null }
+                {
+                  "color": "#73BF69",
+                  "value": null
+                }
               ]
             },
-            "color": { "mode": "fixed", "fixedColor": "#8AB8FF" }
+            "color": {
+              "mode": "fixed",
+              "fixedColor": "#8AB8FF"
+            }
           },
           "overrides": []
         },
         "options": {
-          "tooltip": { "mode": "multi", "sort": "desc" },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "desc"
+          },
           "legend": {
             "displayMode": "list",
             "placement": "bottom",
-            "calcs": ["mean", "max", "lastNotNull"]
+            "calcs": [
+              "mean",
+              "max",
+              "lastNotNull"
+            ]
           }
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_sensor_unit_particles_per_dl{entity=\"sensor.i_9psl_pm0_3\"}",
             "legendFormat": "PM0.3 particles/dL",
             "refId": "A",
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       },
-
       {
         "id": 15,
         "type": "state-timeline",
         "title": "Physical Switch Input",
         "description": "Hardware switch state on the extractor fan relay (Shelly input_0). Shows when the physical wall switch is toggled.",
-        "gridPos": { "h": 5, "w": 8, "x": 16, "y": 34 },
+        "gridPos": {
+          "h": 5,
+          "w": 8,
+          "x": 16,
+          "y": 34
+        },
         "transparent": true,
         "fieldConfig": {
           "defaults": {
@@ -843,20 +1424,34 @@
               "fillOpacity": 80,
               "lineWidth": 0
             },
-            "color": { "mode": "thresholds" },
+            "color": {
+              "mode": "thresholds"
+            },
             "thresholds": {
               "mode": "absolute",
               "steps": [
-                { "color": "#2C3235", "value": null },
-                { "color": "#5794F2", "value": 1 }
+                {
+                  "color": "#2C3235",
+                  "value": null
+                },
+                {
+                  "color": "#5794F2",
+                  "value": 1
+                }
               ]
             },
             "mappings": [
               {
                 "type": "value",
                 "options": {
-                  "0": { "text": "OFF", "color": "#2C3235" },
-                  "1": { "text": "ON", "color": "#5794F2" }
+                  "0": {
+                    "text": "OFF",
+                    "color": "#2C3235"
+                  },
+                  "1": {
+                    "text": "ON",
+                    "color": "#5794F2"
+                  }
                 }
               }
             ]
@@ -868,23 +1463,39 @@
           "showValue": "auto",
           "alignValue": "center",
           "rowHeight": 0.85,
-          "legend": { "displayMode": "hidden", "placement": "bottom" },
-          "tooltip": { "mode": "single", "sort": "none" }
+          "legend": {
+            "displayMode": "hidden",
+            "placement": "bottom"
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
         },
         "targets": [
           {
-            "datasource": { "type": "prometheus", "uid": "ds_prometheus" },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "ds_prometheus"
+            },
             "expr": "hass_binary_sensor_state{entity=\"binary_sensor.extractor_bano_input_0\"}",
             "legendFormat": "Physical Switch",
             "refId": "A",
             "format": "time_series"
           }
         ],
-        "datasource": { "type": "prometheus", "uid": "ds_prometheus" }
+        "datasource": {
+          "type": "prometheus",
+          "uid": "ds_prometheus"
+        }
       }
     ],
-    "templating": { "list": [] },
-    "annotations": { "list": [] },
+    "templating": {
+      "list": []
+    },
+    "annotations": {
+      "list": []
+    },
     "links": []
   },
   "overwrite": true
