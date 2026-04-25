@@ -626,7 +626,10 @@
             "expr": "hass_switch_state{entity=\"switch.extractor_bano_extractor_bano\"}",
             "legendFormat": "Extractor",
             "refId": "A",
-            "format": "time_series"
+            "format": "time_series",
+            "instant": false,
+            "range": true,
+            "intervalMs": 15000
           }
         ],
         "datasource": {
@@ -1481,7 +1484,10 @@
             "expr": "hass_binary_sensor_state{entity=\"binary_sensor.extractor_bano_input_0\"}",
             "legendFormat": "Physical Switch",
             "refId": "A",
-            "format": "time_series"
+            "format": "time_series",
+            "instant": false,
+            "range": true,
+            "intervalMs": 15000
           }
         ],
         "datasource": {
