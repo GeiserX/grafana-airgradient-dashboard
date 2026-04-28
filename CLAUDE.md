@@ -1,4 +1,4 @@
-# AGENTS.md — Grafana AirGradient Dashboard
+# CLAUDE.md — Grafana AirGradient Dashboard
 
 ## Project Overview
 
