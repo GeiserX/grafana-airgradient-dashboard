@@ -6,7 +6,7 @@ Grafana dashboard for AirGradient ONE indoor air quality monitoring with bathroo
 
 - **Repo:** [GeiserX/grafana-airgradient-dashboard](https://github.com/GeiserX/grafana-airgradient-dashboard)
 - **Language:** JSON
-- **License:** GPL-3.0
+- **License:** GPL-3.0-or-later
 
 ## Security
 
